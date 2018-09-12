@@ -1,0 +1,284 @@
+/*---------- btn ----------*/
+.btn
+{
+    // display: inline-flex;
+    min-width: 150px;
+    margin: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    // min-height: 40px;
+    line-height: 26px;
+    border-width: 2px;
+    transition: background .3s ease-in-out, color .3s ease-in-out;
+
+    // align-items: center;
+    // justify-content: space-evenly;
+
+    &,
+    &:active,
+    &.active
+    {
+        &:focus,
+        &.focus
+        {
+            outline: none !important;
+        }
+    }
+
+    &:focus,
+    &.focus
+    {
+        border-color: $grey;
+        background-color: $white;
+    }
+    &:hover
+    {
+        border-color: $grey;
+        background-color: $white;
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle
+    {
+        color: $white;
+        background-color: $darkGrey;
+        box-shadow: none;
+
+        &:hover,
+        &:focus,
+        &.focus
+        {
+            background-color: $darkGrey;
+        }
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] &
+    {
+        opacity: 1;
+        color: $darkGrey;
+        background-color: $grey;
+
+        &:hover,
+        &:focus,
+        &.focus
+        {
+            color: $grey;
+            background-color: $white;
+        }
+    }
+}
+
+.btn-group
+{
+    .btn
+    {
+        min-width: 86px;
+        margin: 0;
+        padding-right: 20px;
+        padding-left: 20px;
+        border-width: 1px;
+    }
+}
+
+.btn-primary
+{
+    @include Omnes_ATT-Medium();
+
+    &:focus,
+    &.focus
+    {
+        color: $white;
+        border-color: $blue;
+        background-color: $blue;
+    }
+    &:hover
+    {
+        color: $white;
+        border-color: $darkBlue;
+        background-color: $darkBlue;
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle
+    {
+        color: $white;
+        background-color: $darkBlue;
+        box-shadow: none;
+
+        &:hover,
+        &:focus,
+        &.focus
+        {
+            border-color: $darkBlue;
+            background-color: $darkBlue;
+        }
+    }
+
+    &.disabled,
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus,
+    &[disabled].active
+    {
+        opacity: 1;
+        color: $darkGrey;
+        border-color: $grey;
+        background-color: $grey;
+    }
+}
+
+.btn-secondary
+{
+    color: $blue;
+    border-color: $blue;
+    background-color: $white;
+
+    @include Omnes_ATT-Medium();
+
+    &:focus,
+    &.focus
+    {
+        color: $blue;
+        border-color: $blue;
+        background-color: $white;
+    }
+    &:hover
+    {
+        color: $darkBlue;
+        border-color: $darkBlue;
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle
+    {
+        color: $white;
+        background-color: $darkBlue;
+        box-shadow: none;
+
+        &:hover,
+        &:focus,
+        &.focus
+        {
+            border-color: $darkBlue;
+            background-color: $darkBlue;
+        }
+    }
+
+    &.disabled,
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus,
+    &[disabled].active
+    {
+        opacity: 1;
+        color: $grey;
+        border-color: $grey;
+        background-color: $white;
+    }
+}
+
+.btn-primary-orange
+{
+    color: $white;
+    border-color: $orange;
+    background-color: $orange;
+
+    &:focus,
+    &.focus
+    {
+        color: $white;
+        border-color: darken($orange, 10%);
+        background-color: darken($orange, 10%);
+    }
+    &:hover
+    {
+        color: $white;
+        border-color: darken($orange, 10%);
+        background-color: darken($orange, 10%);
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle
+    {
+        color: $white;
+        border-color: darken($orange, 10%);
+        background-color: darken($orange, 10%);
+        box-shadow: none;
+
+        &:hover,
+        &:focus,
+        &.focus
+        {
+            color: $white;
+            border-color: darken($orange, 10%);
+            background-color: darken($orange, 10%);
+        }
+    }
+}
+
+.btn-secondary-orange
+{
+    color: $orange;
+    border-color: $orange;
+    background-color: $white;
+
+    &:hover
+    {
+        color: $white;
+        border-color: darken($orange, 10%);
+        background-color: darken($orange, 10%);
+    }
+}
+
+.btn-gray
+{
+    color: $white;
+    border-color: $grey;
+    background-color: $grey;
+
+    &:focus,
+    &.focus
+    {
+        color: $white;
+        border-color: $grey;
+        background-color: $grey;
+    }
+    &:hover
+    {
+        color: $darkGrey;
+        border-color: $grey;
+        background-color: $white;
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle
+    {
+        color: $white;
+        border-color: $darkGrey;
+        background-color: $darkGrey;
+        box-shadow: none;
+
+        &:hover,
+        &:focus,
+        &.focus
+        {
+            border-color: $darkGrey;
+            background-color: $darkGrey;
+        }
+    }
+
+    &.disabled,
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus,
+    &[disabled].active
+    {
+        opacity: 1;
+        color: $darkGrey;
+        border-color: $grey;
+        background-color: $grey;
+    }
+}
+/*---------- /btn ---------*/

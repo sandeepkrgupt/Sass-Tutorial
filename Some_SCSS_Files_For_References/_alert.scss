@@ -1,0 +1,155 @@
+/*---------- alert ----------*/
+.alert
+{
+    display: flex;
+    margin-bottom: 0;
+    padding: 3px 15px;
+    line-height: 32px;
+    color: $black;
+    border-left-width: 10px;
+    background-color: $white;
+
+    align-items: center;
+
+    *
+    {
+        line-height: normal;
+    }
+
+    strong
+    {
+        line-height: 32px;
+    }
+
+     > p
+    {
+        padding-left: 25px;
+
+        .tooltip-wrap
+        {
+            top: 2px;
+            margin-top: -2px;
+        }
+    }
+
+    small
+    {
+        padding-left: 25px;
+
+         > p
+        {
+            margin-bottom: 0;
+        }
+
+        .tooltip-wrap
+        {
+            top: 3px;
+            margin-top: -5px;
+        }
+    }
+
+    ul
+    {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    &-little
+    {
+        padding: 5px 15px;
+        font-size: 12px;
+        line-height: 14px;
+
+        *
+        {
+            line-height: normal;
+        }
+    }
+
+    &.alert-close
+    {
+        position: relative;
+        padding-right: 41px;
+        padding-left: 59px;
+        border-left-width: 1px;
+
+        .alert-close-icon
+        {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 59px;
+            height: 100%;
+
+            align-items: center;
+            justify-content: center;
+
+            img,
+            svg
+            {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .alert-close-bg
+        {
+            width: 44px;
+
+            img,
+            svg
+            {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        .close
+        {
+            right: 15px;
+            height: auto;
+
+            @include absoluteCenterY();
+
+            img
+            {
+                width: 11px;
+                height: 11px;
+            }
+        }
+    }
+
+    &-success
+    {
+        .alert-close-bg
+        {
+            background-color: $state-success-border;
+        }
+    }
+
+    &-info
+    {
+        .alert-close-bg
+        {
+            background-color: $state-info-border;
+        }
+    }
+
+    &-warning
+    {
+        .alert-close-bg
+        {
+            background-color: $state-warning-border;
+        }
+    }
+
+    &-danger
+    {
+        .alert-close-bg
+        {
+            background-color: $state-danger-border;
+        }
+    }
+}
+/*---------- /alert ---------*/

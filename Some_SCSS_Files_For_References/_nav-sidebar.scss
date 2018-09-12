@@ -1,0 +1,113 @@
+/*---------- nav ----------*/
+.nav-sidebar
+{
+    text-align: center;
+    background-color: transparentize($black, .15);
+    height: 100%;
+
+     > li
+    {
+        overflow: hidden;
+
+         > a
+        {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            height: 77px;
+            padding: 10px 15px;
+            font-size: 14px;
+            line-height: 15px;
+            color: transparentize($white, .4);
+            border-bottom: 2px solid transparentize($white, .9);
+            background-color: transparent;
+            transition: color .3s ease-in-out, background .3s ease-in-out, border .3s ease-in-out;
+
+            align-items: center;
+            @include Omnes_ATTW02Light();
+
+            span
+            {
+                display: block;
+            }
+
+            &:hover
+            {
+                color: $white;
+                border-bottom-color: transparentize($white, .6);
+                background-color: transparent;
+
+                &:before
+                {
+                    transform: translate(0, 0);
+                }
+
+                img
+                {
+                    opacity: 1;
+                }
+            }
+
+            &:before
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 5px;
+                height: 100%;
+                content: '';
+                background-color: $orange;
+                transition: transform .3s ease-in-out;
+                transform: translate(-100%, 0);
+            }
+
+            img
+            {
+                display: block;
+                max-height: 24px;
+                margin: 0 auto 7px;
+                opacity: .6;
+                transition: opacity .3s ease-in-out;
+            }
+        }
+
+        &.active
+        {
+             > a
+            {
+                color: $white;
+                border-bottom-color: transparentize($white, .6);
+                background-color: #3b3b3b;
+
+                &:before
+                {
+                    transform: translate(0, 0);
+                }
+
+                img
+                {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.nav-alert
+{
+    position: relative;
+
+    &:after
+    {
+        position: absolute;
+        top: -5px;
+        right: -12px;
+        width: 16px;
+        height: 16px;
+        content: '';
+        border-radius: 50%;
+        background: url('../resources/img/alert_circle.svg') no-repeat center;
+        background-size: contain;
+    }
+}
+/*---------- /nav ---------*/
