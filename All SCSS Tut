@@ -204,3 +204,23 @@ aside[role="complementary"] {
   float: right;
   width: 31.25%;
 }
+
+
+Function :-
+
+$colors: {
+primary : #fff;
+secondary:#555;
+}
+
+@function mycolor(color-name) {
+  @return map-get($colors, color-name);
+}
+
+body {
+margin: 0;
+}
+
+#bg {
+background-color:mycolor(secondary); // only this color will apply
+}
