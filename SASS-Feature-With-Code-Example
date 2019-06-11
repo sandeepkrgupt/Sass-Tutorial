@@ -1,0 +1,85 @@
+-----------Variables---------------------
+$other : #999;
+$colors : (
+primary : #000,
+main: #fff,
+secondary:$other(#777)
+);
+.bg {
+  background-color: map-get($colors, main);
+  color: map-get($colors, secondary);
+  
+}
+--compiled css 
+.bg {
+  background-color: #fff;
+  color: #999 #777;
+}
+-----------------Functions----------------------
+$_size: 12px;
+$color:(primary: #eee, scendory:$_size, ternary: 1px 2px 2px #777);
+
+@function lobby($color-name) {
+  @return map-get($color, $color-name);
+}
+
+
+.bg {
+  background-color: lighten(lobby(primary), 40%);
+  font-size: lobby(scendory);
+  box-shadow: lobby(ternary);
+}
+
+--------------Media Query----------------------
+$mobile: 320px;
+
+@mixin phone-resolution {
+  @media(min-width: #{$mobile}) {
+   @content
+  }
+}
+
+#bg {
+  @include phone-resolution {
+    font-size: 8px;
+  }
+}
+Note - when you remove @content error is - Mixin doesn't accept a content block.
+
+---------------------- Mixin --------------------------
+@mixin tForm($primary) {
+  -webkit-transform:$primary;
+  -moz-transform:$primary;
+  -ms-transform:$primary;
+  transform:$primary;
+}
+
+#animation {
+  @inclide tForm(rotate(90deg));
+}
+
+------------------------Inheritance-------------------
+%message-one {
+  font-size:bold;
+}
+.show {
+  border-radius:20px;
+  text-align:center;
+}
+.success {
+  @extend %message-one, .show;
+  color:green;
+}
+--compiled css
+.success {
+  font-size: bold;
+}
+
+.show, .success {
+  border-radius: 20px;
+  text-align: center;
+}
+
+.success {
+  color: green;
+}
